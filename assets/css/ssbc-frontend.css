@@ -1,0 +1,248 @@
+/**
+ * Frontend styles for Social Share Buttons & Counter
+ */
+
+.ssbc-wrapper {
+	margin: 24px 0;
+	clear: both;
+}
+
+.ssbc-label {
+	font-weight: 600;
+	font-size: 15px;
+	margin-bottom: 10px;
+	color: inherit;
+}
+
+.ssbc-buttons-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Button Base */
+.ssbc-btn {
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 14px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none !important;
+	color: #ffffff !important;
+	cursor: pointer;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.ssbc-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+	color: #ffffff !important;
+}
+
+.ssbc-btn:focus-visible {
+	outline: 2px solid #2563eb;
+	outline-offset: 2px;
+}
+
+.ssbc-btn:active {
+	transform: translateY(0);
+}
+
+/* Shapes */
+.ssbc-style-rounded .ssbc-btn {
+	border-radius: 6px;
+}
+
+.ssbc-style-pill .ssbc-btn {
+	border-radius: 9999px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.ssbc-style-flat .ssbc-btn {
+	border-radius: 0;
+}
+
+/* Icon */
+.ssbc-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 8px;
+	width: 18px;
+	height: 18px;
+}
+
+.ssbc-icon svg {
+	width: 18px;
+	height: 18px;
+	fill: currentColor;
+	vertical-align: middle;
+}
+
+/* Name */
+.ssbc-name {
+	font-size: 13px;
+	letter-spacing: 0.2px;
+}
+
+/* Count Badge */
+.ssbc-count {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 2px 7px;
+	background: rgba(0, 0, 0, 0.18);
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.3px;
+}
+
+/* Total Shares Badge */
+.ssbc-total-badge {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 14px;
+	background: #f1f5f9;
+	color: #334155;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	font-weight: 700;
+	line-height: 1.1;
+	margin-right: 4px;
+}
+
+.ssbc-style-pill .ssbc-total-badge {
+	border-radius: 9999px;
+	padding: 6px 18px;
+}
+
+.ssbc-style-flat .ssbc-total-badge {
+	border-radius: 0;
+}
+
+.ssbc-total-count {
+	font-size: 16px;
+	color: #0f172a;
+}
+
+.ssbc-total-text {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #64748b;
+}
+
+/* Network Official Colors */
+.ssbc-btn-x {
+	background-color: #000000;
+}
+.ssbc-btn-x:hover {
+	background-color: #1a1a1a;
+}
+
+.ssbc-btn-facebook {
+	background-color: #1877f2;
+}
+.ssbc-btn-facebook:hover {
+	background-color: #166fe5;
+}
+
+.ssbc-btn-linkedin {
+	background-color: #0a66c2;
+}
+.ssbc-btn-linkedin:hover {
+	background-color: #095196;
+}
+
+.ssbc-btn-whatsapp {
+	background-color: #25d366;
+}
+.ssbc-btn-whatsapp:hover {
+	background-color: #20bd5a;
+}
+
+.ssbc-btn-pinterest {
+	background-color: #e60023;
+}
+.ssbc-btn-pinterest:hover {
+	background-color: #c8001f;
+}
+
+.ssbc-btn-reddit {
+	background-color: #ff4500;
+}
+.ssbc-btn-reddit:hover {
+	background-color: #e03d00;
+}
+
+.ssbc-btn-copy {
+	background-color: #475569;
+	position: relative;
+}
+.ssbc-btn-copy:hover {
+	background-color: #334155;
+}
+
+/* Copy Toast Tooltip */
+.ssbc-toast {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	background: #0f172a;
+	color: #ffffff;
+	padding: 10px 18px;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	z-index: 999999;
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.25s ease, transform 0.25s ease;
+	pointer-events: none;
+}
+
+.ssbc-toast.ssbc-toast-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+	.ssbc-buttons-container {
+		gap: 8px;
+	}
+	.ssbc-btn {
+		min-height: 38px;
+		padding: 8px 12px;
+		font-size: 12px;
+		box-sizing: border-box;
+	}
+	.ssbc-name {
+		font-size: 12px;
+	}
+	.ssbc-total-badge {
+		min-height: 38px;
+		padding: 4px 12px;
+		box-sizing: border-box;
+	}
+	.ssbc-toast {
+		right: auto;
+		left: 50%;
+		bottom: 20px;
+		transform: translateX(-50%) translateY(12px);
+		white-space: nowrap;
+	}
+	.ssbc-toast.ssbc-toast-visible {
+		transform: translateX(-50%) translateY(0);
+	}
+}

@@ -1,0 +1,26 @@
+/**
+ * Admin styles for Social Share Buttons & Counter
+ */
+
+.ssbc-admin-wrap .form-table th {
+	width: 220px;
+	padding: 20px 10px 20px 0;
+}
+
+.ssbc-network-checkboxes label {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	padding: 6px 14px;
+	border-radius: 4px;
+	transition: background 0.15s ease;
+}
+
+.ssbc-network-checkboxes label:hover {
+	background: #edf2f7;
+}
+
+.ssbc-metabox-wrapper .widefat th,
+.ssbc-metabox-wrapper .widefat td {
+	padding: 8px 10px;
+	font-size: 13px;
+}

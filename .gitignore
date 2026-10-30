@@ -1,0 +1,50 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.claude/
+
+# Logs & debug
+*.log
+debug.log
+error_log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies (if build tooling is added later)
+node_modules/
+vendor/
+
+# Build / release artifacts
+/build/
+/dist/
+*.zip
+*.tar.gz
+svn/
+
+# Caches
+.phpunit.result.cache
+.php-cs-fixer.cache
+.phpcs-cache
+.eslintcache
+.cache/
+
+# Translation backups (keep .pot/.po/.mo)
+languages/*.po~
