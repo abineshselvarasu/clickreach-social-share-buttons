@@ -7,7 +7,7 @@
 [![GPLv2 License](https://img.shields.io/badge/License-GPLv2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Plugin Check](https://img.shields.io/badge/Plugin%20Check-100%25%20Clean-brightgreen.svg)](https://wordpress.org/plugins/plugin-check/)
 
-Lightweight, privacy-friendly social sharing buttons with live click counters. **ClickReach** adds responsive share buttons to your posts, pages, and custom post types with zero bloat, pure inline SVGs, and Core Web Vitals friendly performance.
+Free, fast **social share buttons with share counts** for WordPress. **ClickReach** adds WhatsApp, Facebook, X (Twitter), LinkedIn, Pinterest, Reddit, and Copy Link share buttons to your posts, pages, and custom post types, with a live share counter, pure inline SVG icons, no cookies, and Core Web Vitals friendly performance.
 
 **[Download ClickReach from WordPress.org →](https://wordpress.org/plugins/clickreach-social-share-buttons/)**
 

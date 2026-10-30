@@ -1,7 +1,7 @@
 === ClickReach – Social Share Buttons & Counter ===
 Contributors: abineshselvarasu
 Donate link: https://profiles.wordpress.org/abineshselvarasu/
-Tags: social share, share buttons, social counter, share counter, social sharing
+Tags: share buttons, social share, social sharing, share counter, social media
 Requires at least: 5.6
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -9,36 +9,44 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight, privacy-friendly social sharing buttons with live click counters. Zero bloat, pure inline SVGs, Core Web Vitals friendly.
+Free social share buttons with share counts. Fast inline SVG icons for WhatsApp, Facebook, X, LinkedIn & more. No cookies, GDPR friendly.
 
 == Description ==
 
-**ClickReach – Social Share Buttons & Counter** is an ultra-fast, lightweight, and privacy-focused social sharing plugin for WordPress. It adds beautiful, responsive social sharing buttons with real-time click and share counters to your posts, pages, and custom post types without slowing down your website.
+**ClickReach – Social Share Buttons & Counter** adds fast, beautiful social share buttons with live share counts to your WordPress posts, pages, and custom post types. Let visitors share your content on **WhatsApp, Facebook, X (Twitter), LinkedIn, Pinterest, and Reddit**, or copy the link in one click, while the built-in share counter shows how often each post is shared.
 
-Unlike heavy commercial alternatives that load bloated libraries, external fonts, and slow down your Core Web Vitals, **ClickReach** is built from the ground up for speed, simplicity, and compliance.
+ClickReach is 100% free, has no Pro version, and is built for speed and privacy: pure inline SVG icons, no jQuery, no external scripts, and no cookies. Your share buttons load instantly and will not hurt your Core Web Vitals or PageSpeed score.
+
+### Why choose ClickReach?
+
+* **Share counts that just work:** Counts come from clicks on your own share buttons, so there are no social network API keys, access tokens, or third-party count services to set up.
+* **Honest, abuse-resistant numbers:** Each visitor is counted once per post and network per hour, so bots and scripts cannot inflate your share counts.
+* **Works with page caching:** Share counting works on cached pages (WP Rocket, LiteSpeed Cache, W3 Total Cache, WP Super Cache, and others).
+* **Privacy first:** No cookies, no browser storage, no tracking scripts, and no personal data collection.
+* **Everything free:** No locked features, no upsell screens, and no subscription.
 
 ### 🚀 Key Features
 
-* **100% Free Forever:** No locked features, no "Pro" version nag screens, and no subscription fees.
-* **Ultra-Lightweight & Fast:** Pure embedded inline SVGs. Zero external HTTP requests, zero webfont downloads, and no render-blocking styles.
-* **Real-time Share & Click Counters:** Live click counting via secure AJAX that updates without requiring a page refresh.
-* **Privacy-Friendly & GDPR Compliant:** No third-party tracking scripts, no cookies, and no personal data collection.
-* **Top Social Platforms Supported:**
-  * **X (formerly Twitter)** with official branding
+* **Social Share Buttons for Top Networks:**
+  * **WhatsApp** (great for mobile sharing)
   * **Facebook**
+  * **X (formerly Twitter)**
   * **LinkedIn**
-  * **WhatsApp** (optimized for mobile viral sharing)
   * **Pinterest**
   * **Reddit**
-  * **Copy Link** (with instant "Copied!" toast feedback)
-* **Customizable Button Shapes:** Choose between **Rounded** (soft corners), **Pill** (full capsule), or **Flat** (clean rectangular) styles.
-* **Flexible Placement:**
-  * Automatically display above content, below content, or both.
-  * Target specific post types (Posts, Pages, or Custom Post Types).
-  * Manual embedding anywhere via shortcode: `[clickreach_social_share_buttons]`.
-* **Total Share Count Badge:** Optional aggregate counter showing total shares across all platforms.
-* **Per-Post Controls:** Easily enable or disable share buttons individually on any specific post or page from the editor sidebar.
-* **Clean Code:** Strictly adheres to WordPress.org security, nonces, sanitization, and coding standards.
+  * **Copy Link** (with an instant "Copied!" message)
+* **Live Share Counter:** Per-network click counts and an optional **Total Shares** badge that update instantly without a page refresh.
+* **Ultra-Lightweight & Fast:** Pure inline SVG icons. Zero external HTTP requests, zero web fonts, and no render-blocking styles. CSS and JavaScript load only on pages that show buttons.
+* **Button Styles:** Choose **Rounded**, **Pill**, or **Flat** share buttons.
+* **Flexible Placement:** Show share buttons above content, below content, or both, on posts, pages, or any public custom post type.
+* **Shortcode:** Place share buttons anywhere with `[clickreach_social_share_buttons]`, including the block editor (Gutenberg), Classic Editor, Elementor, Beaver Builder, and theme templates.
+* **Share Count Visibility:** Show counts to everyone, only to logged-in users, or hide them.
+* **Per-Post Controls:** Turn share buttons on or off for any single post or page from the editor.
+* **Clean, Secure Code:** Follows WordPress coding standards with full sanitization, escaping, and rate-limited click tracking.
+
+### Perfect for
+
+Bloggers, news and magazine sites, recipe and travel blogs, portfolios, and small business websites that want simple, fast social sharing buttons with share counts and without slowing down their site.
 
 == Installation ==
 
@@ -60,6 +68,15 @@ Unlike heavy commercial alternatives that load bloated libraries, external fonts
 3. Click **Save Settings**.
 
 == Frequently Asked Questions ==
+
+= How do I add social share buttons to my WordPress site? =
+Install and activate ClickReach, then go to **Settings > ClickReach Social Share Buttons**. Choose your networks, button style, and where the buttons should appear (above or below content), and click **Save Settings**. The share buttons appear automatically on your selected post types. To place them somewhere specific, use the `[clickreach_social_share_buttons]` shortcode.
+
+= Can I add a WhatsApp share button? =
+Yes. WhatsApp is one of the built-in networks, along with Facebook, X (Twitter), LinkedIn, Pinterest, Reddit, and Copy Link. Enable it in the **Social Networks** setting.
+
+= Does it show share counts? =
+Yes. Each button can show its own share count, and an optional **Total Shares** badge shows the combined count for the post. You can show counts to everyone, only to logged-in users, or hide them.
 
 = Does this plugin require jQuery on the frontend? =
 No! The frontend sharing buttons and AJAX click tracker are written in pure vanilla JavaScript, ensuring zero dependency on jQuery and optimal Core Web Vitals scores.
