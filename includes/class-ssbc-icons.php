@@ -22,40 +22,26 @@ class SSBC_Icons {
 	 */
 	public static function get_supported_networks() {
 		return array(
-			'x'        => array(
-				'name'       => __( 'X (Twitter)', 'clickreach-social-share-buttons' ),
-				'color'      => '#000000',
-				'text_color' => '#ffffff',
+			'x'         => array(
+				'name' => __( 'X (Twitter)', 'clickreach-social-share-buttons' ),
 			),
-			'facebook' => array(
-				'name'       => __( 'Facebook', 'clickreach-social-share-buttons' ),
-				'color'      => '#1877f2',
-				'text_color' => '#ffffff',
+			'facebook'  => array(
+				'name' => __( 'Facebook', 'clickreach-social-share-buttons' ),
 			),
-			'linkedin' => array(
-				'name'       => __( 'LinkedIn', 'clickreach-social-share-buttons' ),
-				'color'      => '#0a66c2',
-				'text_color' => '#ffffff',
+			'linkedin'  => array(
+				'name' => __( 'LinkedIn', 'clickreach-social-share-buttons' ),
 			),
-			'whatsapp' => array(
-				'name'       => __( 'WhatsApp', 'clickreach-social-share-buttons' ),
-				'color'      => '#25d366',
-				'text_color' => '#ffffff',
+			'whatsapp'  => array(
+				'name' => __( 'WhatsApp', 'clickreach-social-share-buttons' ),
 			),
 			'pinterest' => array(
-				'name'       => __( 'Pinterest', 'clickreach-social-share-buttons' ),
-				'color'      => '#e60023',
-				'text_color' => '#ffffff',
+				'name' => __( 'Pinterest', 'clickreach-social-share-buttons' ),
 			),
-			'reddit'   => array(
-				'name'       => __( 'Reddit', 'clickreach-social-share-buttons' ),
-				'color'      => '#ff4500',
-				'text_color' => '#ffffff',
+			'reddit'    => array(
+				'name' => __( 'Reddit', 'clickreach-social-share-buttons' ),
 			),
-			'copy'     => array(
-				'name'       => __( 'Copy Link', 'clickreach-social-share-buttons' ),
-				'color'      => '#4a5568',
-				'text_color' => '#ffffff',
+			'copy'      => array(
+				'name' => __( 'Copy Link', 'clickreach-social-share-buttons' ),
 			),
 		);
 	}

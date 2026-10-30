@@ -167,6 +167,10 @@ class SSBC_Settings {
 	 * @return array Sanitized array.
 	 */
 	public static function sanitize_settings( $input ) {
+		if ( ! is_array( $input ) ) {
+			$input = array();
+		}
+
 		$sanitized = self::get_defaults();
 		$available = array_keys( SSBC_Icons::get_supported_networks() );
 

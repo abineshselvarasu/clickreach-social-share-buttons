@@ -3,7 +3,7 @@
  * Plugin Name:       ClickReach – Social Share Buttons & Counter
  * Plugin URI:        https://wordpress.org/plugins/clickreach-social-share-buttons/
  * Description:       Lightweight, privacy-friendly social sharing buttons with live click counters. Maximize your social reach with zero bloat, responsive inline SVGs, and Core Web Vitals friendly performance.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 5.6
  * Requires PHP:      7.4
  * Author:            abineshselvarasu
@@ -20,8 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define Plugin Constants
-define( 'SSBC_VERSION', '1.0.1' );
-define( 'SSBC_PLUGIN_FILE', __FILE__ );
+define( 'SSBC_VERSION', '1.0.2' );
 define( 'SSBC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SSBC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SSBC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -108,7 +107,7 @@ final class Social_Share_Buttons_Counter {
 	}
 
 	/**
-	 * Enqueue admin scripts & styles.
+	 * Enqueue admin styles.
 	 *
 	 * @param string $hook_suffix Current admin page hook.
 	 */
@@ -120,14 +119,6 @@ final class Social_Share_Buttons_Counter {
 				SSBC_PLUGIN_URL . 'assets/css/ssbc-admin.css',
 				array(),
 				SSBC_VERSION
-			);
-
-			wp_enqueue_script(
-				'ssbc-admin-js',
-				SSBC_PLUGIN_URL . 'assets/js/ssbc-admin.js',
-				array( 'jquery' ),
-				SSBC_VERSION,
-				true
 			);
 		}
 	}

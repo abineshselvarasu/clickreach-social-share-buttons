@@ -49,11 +49,12 @@ class SSBC_Ajax {
 
 		// Input validation
 		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Public counter; protected by rate limiting.
-		$post_id  = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
-		$platform = isset( $_POST['platform'] ) ? sanitize_key( $_POST['platform'] ) : '';
+		$raw_id   = isset( $_POST['post_id'] ) ? wp_unslash( $_POST['post_id'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Validated as digits below.
+		$post_id  = ( is_string( $raw_id ) && ctype_digit( $raw_id ) ) ? absint( $raw_id ) : 0;
+		$platform = ( isset( $_POST['platform'] ) && is_string( $_POST['platform'] ) ) ? sanitize_key( $_POST['platform'] ) : '';
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
-		if ( ! $post_id || 'publish' !== get_post_status( $post_id ) ) {
+		if ( ! $post_id || 'publish' !== get_post_status( $post_id ) || ! is_post_type_viewable( get_post_type( $post_id ) ) ) {
 			wp_send_json_error( array( 'message' => __( 'Invalid Post ID.', 'clickreach-social-share-buttons' ) ), 400 );
 		}
 

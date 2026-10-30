@@ -55,11 +55,7 @@ class SSBC_Metabox {
 			$selected_status = 'default';
 		}
 
-		$custom_platforms = get_post_meta( $post->ID, '_ssbc_platforms', true );
-		$all_networks     = SSBC_Icons::get_supported_networks();
-		$global_networks  = (array) SSBC_Settings::get_option( 'enabled_networks', array() );
-
-		$active_for_post = is_array( $custom_platforms ) ? $custom_platforms : $global_networks;
+		$all_networks = SSBC_Icons::get_supported_networks();
 		?>
 		<div class="ssbc-metabox-wrapper">
 			<p><strong><?php esc_html_e( 'Display Option:', 'clickreach-social-share-buttons' ); ?></strong></p>

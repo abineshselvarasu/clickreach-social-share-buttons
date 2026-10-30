@@ -1,5 +1,5 @@
 /**
- * Frontend JavaScript for Social Share Buttons & Counter
+ * Frontend JavaScript for ClickReach – Social Share Buttons & Counter
  * Pure Vanilla JS — zero jQuery dependency for maximum performance.
  */
 document.addEventListener('DOMContentLoaded', function () {

@@ -165,16 +165,16 @@ class SSBC_Frontend {
 	 * @return string HTML string.
 	 */
 	public static function render_buttons_html( $post_id ) {
-		self::enqueue_assets();
-
 		$settings         = SSBC_Settings::get_settings();
 		$enabled_networks = (array) $settings['enabled_networks'];
 		if ( empty( $enabled_networks ) ) {
 			return '';
 		}
 
+		self::enqueue_assets();
+
 		$post_url   = get_permalink( $post_id );
-		$post_title = get_the_title( $post_id );
+		$post_title = wp_strip_all_tags( get_the_title( $post_id ) );
 		$style      = sanitize_html_class( $settings['button_style'] );
 		$show_counts = $settings['show_counts'];
 		$can_show_counts = true;
@@ -263,7 +263,16 @@ class SSBC_Frontend {
 		}
 
 		// Avoid duplicate OG tags if dedicated SEO plugins are active
-		if ( defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || defined( 'AIOSEO_VERSION' ) || class_exists( 'Jetpack' ) ) {
+		$seo_plugin_active = defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || defined( 'AIOSEO_VERSION' )
+			|| defined( 'SEOPRESS_VERSION' ) || defined( 'THE_SEO_FRAMEWORK_VERSION' ) || defined( 'SLIM_SEO_VER' )
+			|| defined( 'SQ_VERSION' ) || class_exists( 'Jetpack' );
+
+		/**
+		 * Filter whether ClickReach prints Open Graph meta tags.
+		 *
+		 * @param bool $output True to print the tags.
+		 */
+		if ( ! apply_filters( 'ssbc_output_open_graph', ! $seo_plugin_active ) ) {
 			return;
 		}
 
@@ -272,7 +281,7 @@ class SSBC_Frontend {
 			return;
 		}
 
-		$title = get_the_title( $post_id );
+		$title = wp_strip_all_tags( get_the_title( $post_id ) );
 		$url   = get_permalink( $post_id );
 		$desc  = wp_strip_all_tags( get_the_excerpt( $post_id ) );
 

@@ -5,7 +5,7 @@ Tags: share buttons, social share, social sharing, share counter, social media
 Requires at least: 5.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -165,6 +165,16 @@ Copies the post URL to the visitor's clipboard. No external connection is made.
 
 == Changelog ==
 
+= 1.0.2 =
+* Security: Click tracking now only accepts posts from publicly viewable post types.
+* Security: Settings sanitization now safely handles malformed input.
+* Fix: Post titles containing HTML no longer show raw tags in share text or social preview cards.
+* Improvement: Open Graph tags are no longer duplicated when SEOPress, The SEO Framework, Slim SEO, or Squirrly SEO is active. Developers can control this with the new `ssbc_output_open_graph` filter.
+* Improvement: Uninstalling on a multisite network now cleans up every site.
+* Performance: Removed an unused admin script, so post edit screens no longer load it (or jQuery for it).
+* Performance: Frontend assets are no longer enqueued when no networks are enabled.
+* Cleanup: Removed unused code and settings data.
+
 = 1.0.1 =
 * Security: Share counters can no longer be inflated by repeated or automated requests. Each visitor is counted once per post and network per hour, with an overall hourly cap.
 * Fix: Clicks are now counted correctly on sites using page caching (expired nonces no longer block anonymous visitors).
@@ -184,6 +194,9 @@ Copies the post URL to the visitor's clipboard. No external connection is made.
 * 100% WordPress.org coding standard compliance.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Security hardening, cleaner social preview titles, and performance cleanup. Recommended for all users.
 
 = 1.0.1 =
 Security and reliability update: prevents share count inflation and fixes click counting on cached sites. Recommended for all users.
