@@ -144,9 +144,7 @@ Copies the post URL to the visitor's clipboard. No external connection is made.
 
 == Screenshots ==
 
-1. Clean, responsive frontend social sharing buttons with live count badges and optional Total Shares counter.
-2. Settings page (Settings > ClickReach Social Share Buttons) to configure enabled networks, button styles, and positions.
-3. Post editor sidebar metabox showing per-post display overrides and detailed click analytics.
+1. Settings page (Settings > ClickReach Social Share Buttons): choose social networks, button placement, post types, button style, share count visibility, the Total Shares badge, and the share heading label.
 
 == Changelog ==
 

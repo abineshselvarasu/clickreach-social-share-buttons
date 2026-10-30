@@ -25,6 +25,14 @@ Unlike heavy commercial alternatives that load bloated libraries, external fonts
 
 ---
 
+## Screenshot
+
+<p align="center">
+  <img src=".wordpress-org/screenshot-1.png" alt="ClickReach Social Share Buttons settings page" width="800">
+</p>
+
+---
+
 ## Key Features
 
 * **100% Free Forever:** No locked features, no "Pro" nag screens, and no subscription fees.
