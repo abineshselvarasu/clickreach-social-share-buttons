@@ -1,0 +1,7 @@
+# Files left out of the WordPress.org release (used by the rsync build into SVN trunk).
+/.git
+/.github
+/.wordpress-org
+/.distignore
+/.gitignore
+/README.md

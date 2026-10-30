@@ -3,6 +3,9 @@
  * Pure Vanilla JS — zero jQuery dependency for maximum performance.
  */
 document.addEventListener('DOMContentLoaded', function () {
+	// Clicks already tracked during this page view (in memory only, no storage).
+	var trackedClicks = {};
+
 	// Event delegation for all share buttons
 	document.body.addEventListener('click', function (event) {
 		var button = event.target.closest('.ssbc-btn');
@@ -40,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (typeof ssbcData === 'undefined' || !ssbcData.ajaxUrl) {
 			return;
 		}
+
+		// Count each network only once per post per page view
+		var clickKey = postId + ':' + platform;
+		if (trackedClicks[clickKey]) {
+			return;
+		}
+		trackedClicks[clickKey] = true;
 
 		var formData = new FormData();
 		formData.append('action', 'ssbc_track_click');

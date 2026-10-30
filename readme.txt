@@ -5,7 +5,7 @@ Tags: social share, share buttons, social counter, share counter, social sharing
 Requires at least: 5.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,13 +68,28 @@ No! The frontend sharing buttons and AJAX click tracker are written in pure vani
 Not at all. The plugin uses pure inline SVGs (less than 3KB total) and loads CSS/JS conditionally only on pages where buttons are actively displayed.
 
 = How does the click counter work? =
-When a visitor clicks a share link, a secure background AJAX request increments the recorded count for that specific post and platform, updating the live counter in real time without refreshing the page.
+When a visitor clicks a share link, a secure background AJAX request increments the recorded count for that specific post and platform, updating the live counter in real time without refreshing the page. Counts are based on clicks on your share buttons, so they work without any social network API keys or third-party count services.
+
+= Why didn't the counter go up when I clicked the same button again? =
+To keep counts honest, each visitor is counted once per post and per network every hour, and each visitor can add at most 30 clicks per hour across your whole site. Repeated clicks still open the share window as normal; they just are not counted again. This also stops bots and scripts from inflating your numbers.
+
+= Does the counter work with page caching plugins? =
+Yes. Click tracking works on cached pages (WP Rocket, LiteSpeed Cache, W3 Total Cache, WP Super Cache, and others), because anonymous clicks are protected by rate limiting rather than by a page nonce that can expire inside a cached page.
+
+= My site is behind Cloudflare or a proxy and the counts look too low. What can I do? =
+The rate limit identifies visitors by their IP address. If your server sees the proxy's IP instead of the visitor's real IP, many visitors look like one visitor and fewer clicks are counted. Most hosts already restore the real visitor IP. If yours does not, you can supply it with the `ssbc_client_ip` filter, for example in a small custom plugin:
+
+`add_filter( 'ssbc_client_ip', function ( $ip ) {
+	return isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) : $ip;
+} );`
+
+Only use a header your proxy sets itself (such as `CF-Connecting-IP` behind Cloudflare). Headers like `X-Forwarded-For` can be faked by visitors when there is no proxy in front of your site.
 
 = Can I place the buttons manually? =
 Yes! Simply use the shortcode `[clickreach_social_share_buttons]` inside any post, page, block, or page builder (Elementor, Beaver Builder, etc.).
 
 = Is this plugin GDPR compliant? =
-Yes, completely. It does not set cookies, does not collect personal visitor data, and does not connect to third-party ad or tracking networks. The only external connections made are the standard share redirect URLs that open on the social platform's own website when a user clicks a share button — no data is sent automatically or in the background.
+Yes, completely. It does not set cookies or use browser storage, does not collect personal visitor data, and does not connect to third-party ad or tracking networks. The only external connections made are the standard share redirect URLs that open on the social platform's own website when a user clicks a share button — no data is sent automatically or in the background. To prevent count inflation, the visitor's IP address is turned into a salted, one-way hash that is stored only in temporary WordPress transients for one hour; raw IP addresses are never stored.
 
 == External Services ==
 
@@ -135,6 +150,14 @@ Copies the post URL to the visitor's clipboard. No external connection is made.
 
 == Changelog ==
 
+= 1.0.1 =
+* Security: Share counters can no longer be inflated by repeated or automated requests. Each visitor is counted once per post and network per hour, with an overall hourly cap.
+* Fix: Clicks are now counted correctly on sites using page caching (expired nonces no longer block anonymous visitors).
+* Fix: Repeat clicks on the same button during one page view are only counted once.
+* Fix: Clicks are only tracked for published posts.
+* Fix: Uninstalling now also removes per-post click counters and display settings.
+* Privacy: Visitors are identified only by a salted, short-lived hash of their IP address. No cookies or browser storage are used.
+
 = 1.0.0 =
 * Initial public release on WordPress.org.
 * Embedded crisp inline SVG icons for X, Facebook, LinkedIn, WhatsApp, Pinterest, Reddit, and Copy Link.
@@ -146,6 +169,9 @@ Copies the post URL to the visitor's clipboard. No external connection is made.
 * 100% WordPress.org coding standard compliance.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Security and reliability update: prevents share count inflation and fixes click counting on cached sites. Recommended for all users.
 
 = 1.0.0 =
 Initial release of ClickReach – Social Share Buttons & Counter.
